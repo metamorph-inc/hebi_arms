@@ -1,0 +1,77 @@
+<launch>
+
+  <!-- Load the URDF model only the parameter server -->
+  <param name="robot_description" textfile="$(find openmeta_generated_urdf_package)/urdf/robot.urdf"/>
+
+  <!-- Start hebiros node -->
+  <node name="hebiros_node" pkg="hebiros" type="hebiros_node" output="screen" launch-prefix="xterm -e" args="-use_gazebo true" />
+
+  <!-- Start main node -->
+  <node name="ctrl_end_eff_pos_class_3dof_test" pkg="hebi_generic_arms_description" type="hebi_3dof_arm_position_ctrl.py"
+        output="screen" launch-prefix="xterm -e"
+        args="-hebi_group_name hebi_3dof_arm -hebi_base_family HEBI -hebi_base_name Base
+              -hebi_shoulder_family HEBI -hebi_shoulder_name Shoulder
+              -hebi_elbow_family HEBI -hebi_elbow_name Elbow
+              -from_master_topic master_to_arm -to_master_topic arm_to_master
+              -base_link a_2043_01_5Z -end_link a_2039_02_4Z
+              -ik_position_bounds 0.01,0.01,0.01" />
+
+  <!-- Start UI node -->
+  <node name="set_target_end_effector_pos" pkg="hebi_3dof_arm_description" type="set_target_end_effector_pos.py"
+        output="screen" launch-prefix="xterm -e"
+        args="-to_arm_topic master_to_arm -from_arm_topic arm_to_master" />
+
+  <!--  launch-prefix="xterm -e" -->
+
+  <!-- Gazebo -->
+  <!-- these are the arguments you can pass this launch file, for example paused:=true -->
+  <arg name="paused" default="true"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="extra_gazebo_args" default=""/>
+  <arg name="gui" default="true"/>
+  <arg name="recording" default="false"/>
+  <!-- Note that 'headless' is currently non-functional.  See gazebo_ros_pkgs issue #491 (-r arg does not disable
+       rendering, but instead enables recording). The arg definition has been left here to prevent breaking downstream
+       launch files, but it does nothing. -->
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="true"/>
+  <arg name="physics" default="ode"/>
+  <arg name="verbose" default="true"/>
+  <arg name="world_name" default="worlds/empty.world"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+  <arg name="respawn_gazebo" default="false"/>
+  <arg name="use_clock_frequency" default="false"/>
+  <arg name="pub_clock_frequency" default="100"/>
+  <arg name="required" default="false"/>
+
+  <!-- set use_sim_time flag -->
+  <group if="$(arg use_sim_time)">
+    <param name="/use_sim_time" value="true" />
+  </group>
+
+  <!-- set command arguments -->
+  <arg unless="$(arg paused)" name="command_arg1" value=""/>
+  <arg     if="$(arg paused)" name="command_arg1" value="-u"/>
+  <arg unless="$(arg recording)" name="command_arg2" value=""/>
+  <arg     if="$(arg recording)" name="command_arg2" value="-r"/>
+  <arg unless="$(arg verbose)" name="command_arg3" value=""/>
+  <arg     if="$(arg verbose)" name="command_arg3" value="--verbose"/>
+  <arg unless="$(arg debug)" name="script_type" value="gzserver"/>
+  <arg     if="$(arg debug)" name="script_type" value="debug"/>
+
+  <!-- start gazebo server-->
+  <group if="$(arg use_clock_frequency)">
+    <param name="gazebo/pub_clock_frequency" value="$(arg pub_clock_frequency)" />
+  </group>
+  <node name="gazebo" pkg="gazebo_ros" type="$(arg script_type)" respawn="$(arg respawn_gazebo)" output="screen"
+  args="$(arg command_arg1) $(arg command_arg2) $(arg command_arg3) -e $(arg physics) $(arg extra_gazebo_args) $(arg world_name)" />
+
+  <!-- start gazebo client -->
+  <group if="$(arg gui)">
+    <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="screen" required="$(arg required)"/>
+  </group>
+
+  <!-- Spawn a urdf in Gazebo, taking the description from the parameter server -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+        args="-param robot_description -urdf -model robot -x 0 -y 0 -z 0.75" />
+        <!-- Note: I'm explicitly setting the spawn location - this can be a useful trick if you want to spawn multiple robots... -->
+</launch>

@@ -1,0 +1,20 @@
+<launch>
+
+  <include file="$(find hebi_6_dof_arm_generated_launch)/launch/load_urdf_onto_ros_param_server.launch" />
+
+  <!-- Start hebiros_node -->
+  <include file="$(find hebiros)/launch/hebiros.launch" />
+
+  <node name="arm_rviz_controller" pkg="hebi_6_dof_arm_behavior" type="arm_rviz_ctrl.py"
+        output="screen" launch-prefix="xterm -e"
+        args="-hebi_group hebi_6d_arm -modules ARM/Base ARM/Shoulder ARM/Elbow ARM/Wrist_1 ARM/Wrist_2
+             -base_link_name a_2043_01_13Z -end_link_name hebi_x5_1_9Z"
+  />
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen" launch-prefix="xterm -e" />
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find hebi_6_dof_arm_behavior)/rviz/int_marker_demo.rviz" output="screen" launch-prefix="xterm -e"/>
+
+  <!-- launch-prefix="xterm -e" -->
+
+</launch>

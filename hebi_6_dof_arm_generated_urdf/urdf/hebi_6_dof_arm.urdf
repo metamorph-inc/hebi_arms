@@ -1,0 +1,932 @@
+<?xml version="1.0" ?>
+<robot name="HEBI_6_DOF_Arm_1">
+  <!--Joints-->
+  <joint name="world_to_base_link" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+  <joint name="base_link_to_a_2043_01_13Z" type="fixed">
+    <parent link="base_link"/>
+    <child link="a_2043_01_13Z"/>
+  </joint>
+  <joint name="a_2043_01_13Z_to_hebi_x5_9_15Z" type="fixed">
+    <parent link="a_2043_01_13Z"/>
+    <child link="hebi_x5_9_15Z"/>
+    <origin rpy="0.0 0.0 0.0" xyz="8.71763536758e-24 1.61232339957e-23 1e-23"/>
+  </joint>
+  <joint name="ARM/Base/X5_9" type="revolute">
+    <parent link="hebi_x5_9_15Z"/>
+    <child link="a_2040_01r_12Z"/>
+    <axis xyz="-2.77554010017e-17 -1.73472348e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-2" upper="+2" velocity="100"/>
+    <origin rpy="0.0 -3.34767643574e-17 -3.14159265359" xyz="-5.55318730462e-17 -2.96636102637e-18 0.03"/>
+  </joint>
+  <gazebo reference="ARM/Base/X5_9">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2040_01r_12Z_to_hebi_x5_9_16Z" type="fixed">
+    <parent link="a_2040_01r_12Z"/>
+    <child link="hebi_x5_9_16Z"/>
+    <origin rpy="1.57079632679 -0.0 -3.14159265359" xyz="-5.38184507892e-17 0.03750000003 0.055"/>
+  </joint>
+  <joint name="ARM/Shoulder/X5_9" type="revolute">
+    <parent link="hebi_x5_9_16Z"/>
+    <child link="a_2038_02_6Z"/>
+    <axis xyz="-2.77554010017e-17 -1.66533454e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="0" upper="+1.1" velocity="100"/>
+    <origin rpy="0.0 -2.77555756e-17 0.0" xyz="-5.63687556453e-17 2.34257058104e-17 0.03"/>
+  </joint>
+  <gazebo reference="ARM/Shoulder/X5_9">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2038_02_6Z_to_tubepar_3Z" type="fixed">
+    <parent link="a_2038_02_6Z"/>
+    <child link="tubepar_3Z"/>
+    <origin rpy="1.57079632679 -1.57079632679 0.0" xyz="0.0135 1.5578633904e-18 0.02"/>
+  </joint>
+  <joint name="tubepar_3Z_to_a_2039_02_7Z" type="fixed">
+    <parent link="tubepar_3Z"/>
+    <child link="a_2039_02_7Z"/>
+    <origin rpy="1.57079632679 2.50240867501e-14 -1.57079632679" xyz="-1.04532313799e-18 -0.3 -3.11352413402e-18"/>
+  </joint>
+  <joint name="a_2039_02_7Z_to_hebi_x5_4_14Z" type="fixed">
+    <parent link="a_2039_02_7Z"/>
+    <child link="hebi_x5_4_14Z"/>
+    <origin rpy="1.22464679915e-16 1.04083409e-17 2.50240867501e-14" xyz="0.014 3.32344199835e-16 0.02"/>
+  </joint>
+  <joint name="ARM/Elbow/X5_4" type="revolute">
+    <parent link="hebi_x5_4_14Z"/>
+    <child link="a_2038_02_11Z"/>
+    <axis xyz="3.34767643574e-17 -1.5959456e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-2.5" upper="+2.5" velocity="100"/>
+    <origin rpy="0.0 -2.77555756e-17 -1.23259516441e-32" xyz="-5.58391159301e-17 -4.7878368e-18 0.03"/>
+  </joint>
+  <gazebo reference="ARM/Elbow/X5_4">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="a_2038_02_11Z_to_tubepar_2Z" type="fixed">
+    <parent link="a_2038_02_11Z"/>
+    <child link="tubepar_2Z"/>
+    <origin rpy="1.57079632679 -1.57079632679 0.0" xyz="0.0135 -1.1415297504e-18 0.02"/>
+  </joint>
+  <joint name="tubepar_2Z_to_a_2039_02_1Z" type="fixed">
+    <parent link="tubepar_2Z"/>
+    <child link="a_2039_02_1Z"/>
+    <origin rpy="1.57079632679 2.50240867501e-14 -1.57079632679" xyz="2.94658008559e-18 -0.3 -1.10973305812e-17"/>
+  </joint>
+  <joint name="a_2039_02_1Z_to_hebi_x5_1_8Z" type="fixed">
+    <parent link="a_2039_02_1Z"/>
+    <child link="hebi_x5_1_8Z"/>
+    <origin rpy="1.22464679915e-16 1.04083409e-17 2.50240867501e-14" xyz="0.014 3.35287488301e-16 0.02"/>
+  </joint>
+  <joint name="ARM/Wrist_1/X5_1" type="revolute">
+    <parent link="hebi_x5_1_8Z"/>
+    <child link="pm-2132-01_5Z"/>
+    <axis xyz="-7.16406808574e-17 -1.5959456e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-2" upper="+4.5" velocity="100"/>
+    <origin rpy="1.11022302e-15 1.58288319444e-15 -1.33566834996e-15" xyz="-2.14922042572e-18 -4.7878368e-18 0.03"/>
+  </joint>
+  <gazebo reference="ARM/Wrist_1/X5_1">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="pm-2132-01_5Z_to_hebi_x5_1_10Z" type="fixed">
+    <parent link="pm-2132-01_5Z"/>
+    <child link="hebi_x5_1_10Z"/>
+    <origin rpy="-1.57079632679 1.61063877004e-15 -3.14159265359" xyz="-4.2271658196e-18 -0.043 0.04"/>
+  </joint>
+  <joint name="ARM/Wrist_2/X5_1" type="revolute">
+    <parent link="hebi_x5_1_10Z"/>
+    <child link="pm-2132-01_4Z"/>
+    <axis xyz="-1.15525786115e-16 -1.73472348e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-2" upper="+5" velocity="100"/>
+    <origin rpy="1.11022302e-15 1.58288319444e-15 -1.33566834996e-15" xyz="-3.46577358344e-18 -6.20475893008e-17 0.03"/>
+  </joint>
+  <gazebo reference="ARM/Wrist_2/X5_1">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="pm-2132-01_4Z_to_hebi_x5_1_9Z" type="fixed">
+    <parent link="pm-2132-01_4Z"/>
+    <child link="hebi_x5_1_9Z"/>
+    <origin rpy="-1.57079632679 1.61063877004e-15 -3.14159265359" xyz="-8.61556064806e-18 -0.043 0.04"/>
+  </joint>
+
+
+  <joint name="base_link_to_hebi_x9_spool" type="fixed">
+    <parent link="base_link"/>
+    <child link="hebi_x9_spool"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0 0.5 0"/>
+  </joint>
+  <joint name="GRIPPER/Spool/X5_9" type="revolute">
+    <parent link="hebi_x9_spool"/>
+    <child link="spool"/>
+    <axis xyz="-1.15525786115e-16 -1.73472348e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="30" lower="-1" upper="+1" velocity="90"/>
+    <origin rpy="0 0 0" xyz="0 0 0.03"/>
+  </joint>
+  <gazebo reference="GRIPPER/Spool/X5_9">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+
+  <gazebo reference="GRIPPER/Spool/X5_9">
+    <sensor name="gripper_force_torque" type="force_torque">
+      <always_on>true</always_on>
+      <update_rate>100.0</update_rate>
+      <visualize>true</visualize>
+      <force_torque>
+        <frame>sensor</frame>
+        <measure_direction>parent_to_child</measure_direction>
+      </force_torque>
+    </sensor>
+  </gazebo>
+
+  <link name="hebi_x9_spool">
+    <visual>
+      <origin rpy="0 0 0" xyz="-5.55318730462e-17 -2.49799181e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/hebi_x5_9_15z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-5.55318730462e-17 -2.49799181e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/hebi_x5_9_15z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.3601223934133934"/>
+      <inertia ixx="0.000149654657264" ixy="-2.029262623e-05" ixz="1.36324075072e-08" iyy="0.000259599603648" iyz="1.37817063293e-07" izz="0.000355190384437"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x9_spool">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000000</kp>
+    <kd>1</kd>
+    <minDepth>0.0005</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="spool">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.015"/>
+      <geometry>
+        <box size ="0.03 0.03 0.03" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.015"/>
+      <geometry>
+        <box size ="0.03 0.03 0.03" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.015"/>
+      <mass value="0.2"/>
+      <inertia ixx="3e-05" iyy="3e-05" izz="3e-05" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+  <gazebo reference="spool">
+    <selfCollide>False</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+    <kp>100000000</kp>
+    <kd>1</kd>
+    <minDepth>0.0005</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+
+  <joint name="ARM/Wrist_3/X5_1" type="revolute">
+    <parent link="hebi_x5_1_9Z"/>
+    <child link="gripper_base"/>
+    <axis xyz="-1.15525786115e-16 -1.73472348e-16 1.0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="100" lower="-5" upper="+5" velocity="100"/>
+    <origin rpy="0 0 0" xyz="0 0 0.03"/>
+  </joint>
+  <gazebo reference="ARM/Wrist_3/X5_1">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="gripper_base_to_left_finger" type="revolute">
+    <parent link="gripper_base"/>
+    <child link="left_finger"/>
+    <axis xyz="0 1.0 0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="20" lower="0" upper="+0.5" velocity="20"/>
+    <origin rpy="0 0 0" xyz="-0.03 0 0.04"/>
+  </joint>
+  <gazebo reference="gripper_base_to_left_finger">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <joint name="gripper_base_to_right_finger" type="revolute">
+    <parent link="gripper_base"/>
+    <child link="right_finger"/>
+    <axis xyz="0 1.0 0"/>
+    <dynamics damping="0.5" friction="0.06"/>
+    <limit effort="20" lower="0" upper="+0.5" velocity="20"/>
+    <origin rpy="0 0 3.14159" xyz="0.03 0 0.04"/>
+  </joint>
+  <gazebo reference="gripper_base_to_right_finger">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="left_finger" filename="libtransmission_gazebo_plugin.so">
+      <jointA>GRIPPER/Spool/X5_9</jointA>
+      <jointB>gripper_base_to_left_finger</jointB>
+      <forwardMechanicalReduction>0.5</forwardMechanicalReduction>
+      <backwardMechanicalReduction>0.0</backwardMechanicalReduction>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="right_finger" filename="libtransmission_gazebo_plugin.so">
+      <jointA>GRIPPER/Spool/X5_9</jointA>
+      <jointB>gripper_base_to_right_finger</jointB>
+      <forwardMechanicalReduction>0.5</forwardMechanicalReduction>
+      <backwardMechanicalReduction>0.0</backwardMechanicalReduction>
+    </plugin>
+  </gazebo>
+
+  <link name="gripper_base">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.015"/>
+      <geometry>
+        <box size ="0.03 0.03 0.03" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.015"/>
+      <geometry>
+        <box size ="0.03 0.03 0.03" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.015"/>
+      <mass value="0.2"/>
+      <inertia ixx="3e-05" iyy="3e-05" izz="3e-05" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+  <gazebo reference="gripper_base">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>
+    <minDepth>0.0005</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="left_finger">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.0375"/>
+      <geometry>
+        <box size ="0.015 0.03 0.075" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.0375"/>
+      <geometry>
+        <box size ="0.015 0.03 0.075" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.0375"/>
+      <mass value="0.1"/>
+      <inertia ixx="5.437e-05" iyy="4.875e-05" izz="9.37e-06" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+  <gazebo reference="left_finger">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.6</mu1>
+    <mu2>0.6</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="right_finger">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.0375"/>
+      <geometry>
+        <box size ="0.015 0.03 0.075" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.0375"/>
+      <geometry>
+        <box size ="0.015 0.03 0.075" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.0375"/>
+      <mass value="0.1"/>
+      <inertia ixx="5.437e-05" iyy="4.875e-05" izz="9.37e-06" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+  <gazebo reference="right_finger">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.6</mu1>
+    <mu2>0.6</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+
+  <!--Links-->
+  <link name="world"/>
+  <link name="base_link">
+    <!--Transformation from CyPhy2CAD global reference frame to base_link-->
+    <CyPhy2CAD>
+      <CADAssembly_metrics>
+        <RotationMatrix>
+          <Row>
+            <Column Value="1.0"/>
+            <Column Value="0.0"/>
+            <Column Value="0.0"/>
+          </Row>
+          <Row>
+            <Column Value="0.0"/>
+            <Column Value="1.0"/>
+            <Column Value="0.0"/>
+          </Row>
+          <Row>
+            <Column Value="0.0"/>
+            <Column Value="0.0"/>
+            <Column Value="1.0"/>
+          </Row>
+        </RotationMatrix>
+        <Translation X="1e-20" Y="1e-20" Z="1e-20"/>
+      </CADAssembly_metrics>
+    </CyPhy2CAD>
+  </link>
+  <link name="a_2038_02_11Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="5.68434188608e-17 -5.97523496792e-33 -3.48065554802e-33"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/a_2038_02_11z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="5.68434188608e-17 -5.97523496792e-33 -3.48065554802e-33"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/a_2038_02_11z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0176052907699 -5.97523496792e-33 0.0142788404199"/>
+      <mass value="0.059108249978877175"/>
+      <inertia ixx="2.3632587043e-05" ixy="0.0" ixz="-3.93131579939e-06" iyy="2.03298829586e-05" iyz="0.0" izz="2.72912531732e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2038_02_11Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>
+    <minDepth>0.0005</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2038_02_6Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="5.34704228727e-17 5.62067424693e-33 2.34655513593e-33"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/a_2038_02_6z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="5.34704228727e-17 5.62067424693e-33 2.34655513593e-33"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/a_2038_02_6z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0176052907699 5.62067424693e-33 0.0142788404199"/>
+      <mass value="0.059108249978877175"/>
+      <inertia ixx="2.3632587043e-05" ixy="0.0" ixz="-3.93131579939e-06" iyy="2.03298829586e-05" iyz="0.0" izz="2.72912531732e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2038_02_6Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>
+    <minDepth>0.0005</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2039_02_1Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.014 3.49498343016e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/a_2039_02_1z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.014 3.49498343016e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/a_2039_02_1z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00256411047128 3.49498343016e-16 0.00833404763152"/>
+      <mass value="0.08075605008850124"/>
+      <inertia ixx="3.54766366127e-05" ixy="0.0" ixz="-8.29679742245e-06" iyy="3.7139980371e-05" iyz="0.0" izz="5.23238184568e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2039_02_1Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>
+    <minDepth>0.0005</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2039_02_7Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.014 3.4655505455e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/a_2039_02_7z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.014 3.4655505455e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/a_2039_02_7z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00256411047128 3.4655505455e-16 0.00833404763152"/>
+      <mass value="0.08075605008850124"/>
+      <inertia ixx="3.54766366127e-05" ixy="0.0" ixz="-8.29679742245e-06" iyy="3.7139980371e-05" iyz="0.0" izz="5.23238184568e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2039_02_7Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>
+    <minDepth>0.0005</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2040_01r_12Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.00144337567 0.0366111248 -0.0110127649"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/a_2040_01r_12z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.00144337567 0.0366111248 -0.0110127649"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/a_2040_01r_12z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0048895444636 0.025165657448 0.0321043733508"/>
+      <mass value="0.20946134593484614"/>
+      <inertia ixx="0.000172350274153" ixy="6.95173997536e-06" ixz="-1.73640622883e-06" iyy="0.000214786314285" iyz="-3.45081093975e-05" izz="0.000121134255458"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2040_01r_12Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>
+    <minDepth>0.0005</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="a_2043_01_13Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="1e-23 1e-23 1e-23"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/a_2043_01_13z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="1e-23 1e-23 1e-23"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/a_2043_01_13z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00139419949295 1e-23 -0.00293190489101"/>
+      <mass value="0.06272938391183215"/>
+      <inertia ixx="7.22571415296e-05" ixy="2.96268938113e-10" ixz="5.68510520871e-08" iyy="1.34631068457e-05" iyz="0.0" izz="8.48613385518e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2043_01_13Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>
+    <minDepth>0.0005</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="tubepar_2Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="2.94658008559e-18 -0.3 -1.10973305812e-17"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/tubepar_2z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="2.94658008559e-18 -0.3 -1.10973305812e-17"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/tubepar_2z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="2.94658008559e-18 -0.15 -1.10973305812e-17"/>
+      <mass value="0.12133427279164029"/>
+      <inertia ixx="0.000923727684155" ixy="0.0" ixz="0.0" iyy="2.74413054377e-05" iyz="0.0" izz="0.000923727713157"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_2Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>
+    <minDepth>0.0005</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="tubepar_3Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-1.04532313799e-18 -0.3 -3.11352413402e-18"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/tubepar_3z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-1.04532313799e-18 -0.3 -3.11352413402e-18"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/tubepar_3z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-1.04532313799e-18 -0.15 -3.11352413402e-18"/>
+      <mass value="0.12133427279164029"/>
+      <inertia ixx="0.000923727684155" ixy="0.0" ixz="0.0" iyy="2.74413054377e-05" iyz="0.0" izz="0.000923727713157"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_3Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.05</mu1>
+    <mu2>0.05</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>
+    <minDepth>0.0005</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="pm-2132-01_5Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/pm-2132-01_5z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/pm-2132-01_5z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00279899640977 -0.0249156289308 0.0217621079736"/>
+      <mass value="0.00011123944034828993"/>
+      <inertia ixx="8.27045310277e-08" ixy="3.91246560309e-09" ixz="1.30533871091e-09" iyy="8.43993472647e-08" iyz="2.34003348491e-08" izz="7.43473287776e-08"/>
+    </inertial>
+  </link>
+  <gazebo reference="pm-2132-01_5Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>
+    <minDepth>0.0005</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="pm-2132-01_4Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/pm-2132-01_4z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/pm-2132-01_4z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00279899640977 -0.0249156289308 0.0217621079736"/>
+      <mass value="0.00011123944034828993"/>
+      <inertia ixx="8.27045310277e-08" ixy="3.91246560309e-09" ixz="1.30533871091e-09" iyy="8.43993472647e-08" iyz="2.34003348491e-08" izz="7.43473287776e-08"/>
+    </inertial>
+  </link>
+  <gazebo reference="pm-2132-01_4Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Grey</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>
+    <minDepth>0.0005</minDepth>
+    <maxVel>100</maxVel>
+  </gazebo>
+  <link name="hebi_x5_1_8Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-1.07461021286e-18 -2.3939184e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/hebi_x5_1_8z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-1.07461021286e-18 -2.3939184e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/hebi_x5_1_8z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.31314990731599424"/>
+      <inertia ixx="0.000130134484577" ixy="-1.76457619391e-05" ixz="1.18542673976e-08" iyy="0.00022573878578" iyz="1.19840924602e-07" izz="0.000308861203858"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_1_8Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="ARM/Wrist_1/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/ARM/Wrist_1</topicName>
+        <bodyName>ARM/Wrist_1/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>ARM/Wrist_1/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_1_10Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-1.73288679172e-18 -5.94455040808e-17 0.015"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/hebi_x5_1_10z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-1.73288679172e-18 -5.94455040808e-17 0.015"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/hebi_x5_1_10z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.31314990731599424"/>
+      <inertia ixx="0.000130134484577" ixy="-1.76457619391e-05" ixz="1.18542673976e-08" iyy="0.00022573878578" iyz="1.19840924602e-07" izz="0.000308861203858"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_1_10Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="ARM/Wrist_2/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/ARM/Wrist_2</topicName>
+        <bodyName>ARM/Wrist_2/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>ARM/Wrist_2/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_1_9Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-8.14401692361e-19 -4.49223991356e-17 0.015"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/hebi_x5_1_9z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-8.14401692361e-19 -4.49223991356e-17 0.015"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/hebi_x5_1_9z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.31314990731599424"/>
+      <inertia ixx="0.000130134484577" ixy="-1.76457619391e-05" ixz="1.18542673976e-08" iyy="0.00022573878578" iyz="1.19840924602e-07" izz="0.000308861203858"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_1_9Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="ARM/Wrist_3/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/ARM/Wrist_3</topicName>
+        <bodyName>ARM/Wrist_3/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>ARM/Wrist_3/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_4_14Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-5.63412673954e-17 -2.3939184e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/hebi_x5_4_14z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-5.63412673954e-17 -2.3939184e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/hebi_x5_4_14z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.33507040082811385"/>
+      <inertia ixx="0.000139243898497" ixy="-1.88809652748e-05" ixz="1.26840661154e-08" iyy="0.000241540500785" iyz="1.28229789324e-07" izz="0.000330481488128"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_4_14Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="ARM/Elbow/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/ARM/Elbow</topicName>
+        <bodyName>ARM/Elbow/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>ARM/Elbow/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_9_16Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-5.63687556453e-17 2.59237076204e-17 0.015"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/hebi_x5_9_16z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-5.63687556453e-17 2.59237076204e-17 0.015"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/hebi_x5_9_16z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.3601223934133934"/>
+      <inertia ixx="0.000149654657264" ixy="-2.029262623e-05" ixz="1.36324075072e-08" iyy="0.000259599603648" iyz="1.37817063293e-07" izz="0.000355190384437"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_9_16Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="ARM/Shoulder/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/ARM/Shoulder</topicName>
+        <bodyName>ARM/Shoulder/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>ARM/Shoulder/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="hebi_x5_9_15Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-5.55318730462e-17 -2.49799181e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/hebi_x5_9_15z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-5.55318730462e-17 -2.49799181e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebi_6_dof_arm_generated_urdf/meshes/hebi_x5_9_15z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.3601223934133934"/>
+      <inertia ixx="0.000149654657264" ixy="-2.029262623e-05" ixz="1.36324075072e-08" iyy="0.000259599603648" iyz="1.37817063293e-07" izz="0.000355190384437"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_9_15Z">
+    <selfCollide>True</selfCollide>
+    <material>Gazebo/Red</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>100</maxVel>
+    <sensor name="ARM/Base/imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>/hebiros_gazebo_plugin/imu/ARM/Base</topicName>
+        <bodyName>ARM/Base/imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0.025 0 0.003</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>ARM/Base/imu_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <!--HEBI-ROS Gazebo Plugin-->
+  <gazebo>
+    <plugin filename="libhebiros_gazebo_plugin.so" name="hebiros_gazebo_plugin"/>
+  </gazebo>
+</robot>

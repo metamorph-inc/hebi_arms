@@ -1,0 +1,17 @@
+<launch>
+
+  <!-- Load URDF onto Parameter server, start Gazebo, spawn URDF in Gazebo -->
+  <include file="$(find hebi_6_dof_arm_generated_launch)/launch/spawn_urdf_in_gazebo.launch" />
+
+  <!-- Start hebiros_node -->
+  <include file="$(find hebiros)/launch/hebiros_gazebo.launch" />
+
+  <node name="arm_position_controller" pkg="hebi_6_dof_arm_behavior" type="arm_position_ctrl.py"
+        output="screen" launch-prefix="xterm -e"
+        args="-hebi_group hebi_6d_arm -modules ARM/Base ARM/Shoulder ARM/Elbow ARM/Wrist_1 ARM/Wrist_2
+             -base_link_name a_2043_01_13Z -end_link_name hebi_x5_1_9Z"
+  />
+
+  <!-- launch-prefix="xterm -e" -->
+
+</launch>

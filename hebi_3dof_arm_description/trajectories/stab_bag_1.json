@@ -1,0 +1,47 @@
+{
+    "times": [ 0.0, 0.5, 3.5, 4.0, 7.0, 7.5, 8.5 ],
+    "waypoints": {
+        "0": {
+            "accelerations": [ 0.0, 0.0, 0.0 ],
+            "names": [ "HEBI/Base", "HEBI/Shoulder", "HEBI/Elbow" ],
+            "positions": [ -1.252764344215393, 0.26829856634140015, -1.380727767944336 ],
+            "velocities": [ 0.0, 0.0, 0.0 ]
+        },
+        "1": {
+            "accelerations": [ NaN, NaN, 0,0 ],
+            "names": [ "HEBI/Base", "HEBI/Shoulder", "HEBI/Elbow" ],
+            "positions": [ -1.2052630186080933, 0.03462286293506622, -1.183509111404419 ],
+            "velocities": [ NaN, NaN, NaN ]
+        },
+        "2": {
+            "accelerations": [ NaN, NaN, NaN ],
+            "names": [ "HEBI/Base", "HEBI/Shoulder", "HEBI/Elbow" ],
+            "positions": [ -1.1919106245040894, 0.5140551328659058, -1.1895688772201538 ],
+            "velocities": [ NaN, NaN, NaN ]
+        },
+        "3": {
+            "accelerations": [ NaN, NaN, 0.0 ],
+            "names": [ "HEBI/Base", "HEBI/Shoulder", "HEBI/Elbow" ],
+            "positions": [ -1.1974117755889893, 0.010941114276647568, -1.1907587051391602 ],
+            "velocities": [ NaN, NaN, 0.1 ]
+        },
+        "4": {
+            "accelerations": [ NaN, NaN, NaN ],
+            "names": [ "HEBI/Base", "HEBI/Shoulder", "HEBI/Elbow" ],
+            "positions": [ -1.3287235498428345, 0.6316562294960022, -1.2007999420166016 ],
+            "velocities": [ NaN, NaN, NaN ]
+        },
+        "5": {
+            "accelerations": [ NaN, NaN, 0.0 ],
+            "names": [ "HEBI/Base", "HEBI/Shoulder", "HEBI/Elbow" ],
+            "positions": [ -1.246410608291626, 0.005102912895381451, -1.2270739078521729 ],
+            "velocities": [ NaN, NaN, 0.1 ]
+        },
+        "6": {
+            "accelerations": [ NaN, NaN, NaN ],
+            "names": [ "HEBI/Base", "HEBI/Shoulder", "HEBI/Elbow" ],
+            "positions": [ -1.2700824737548828, 0.5621283054351807, -1.2676633596420288 ],
+            "velocities": [ NaN, NaN, NaN ]
+        }
+    }
+}

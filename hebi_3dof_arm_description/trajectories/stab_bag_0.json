@@ -1,0 +1,23 @@
+{
+    "times": [ 0.0, 3.0, 6.0 ],
+    "waypoints": {
+        "0": {
+            "accelerations": [ 0.0, 0.0, 0.0 ],
+            "names": [ "HEBI/Base", "HEBI/Shoulder", "HEBI/Elbow" ],
+            "positions": [ -0.13363109529018402, 0.8146548271179199, -1.5678825378417969 ],
+            "velocities": [ 0.0, 0.0, 0.0 ]
+        },
+        "1": {
+            "accelerations": [ NaN, NaN, NaN ],
+            "names": [ "HEBI/Base", "HEBI/Shoulder", "HEBI/Elbow" ],
+            "positions": [ -1.2769540548324585, 0.7997034788131714, -1.5678093433380127 ],
+            "velocities": [ NaN, NaN, NaN ]
+        },
+        "2": {
+            "accelerations": [ NaN, NaN, NaN ],
+            "names": [ "HEBI/Base", "HEBI/Shoulder", "HEBI/Elbow" ],
+            "positions": [ -1.252764344215393, 0.26829856634140015, -1.380727767944336 ],
+            "velocities": [ NaN, NaN, NaN ]
+        }
+    }
+}

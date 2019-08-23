@@ -1,0 +1,335 @@
+<?xml version="1.0" ?>
+<robot name="3_DOF_Arm_1">
+  <joint name="world_to_a_2043_01_9Z" type="fixed">
+    <parent link="world"/>
+    <child link="a_2043_01_9Z"/>
+  </joint>
+  <joint name="a_2043_01_9Z_to_hebi_x5_6Z" type="fixed">
+    <parent link="a_2043_01_9Z"/>
+    <child link="hebi_x5_6Z"/>
+    <origin rpy="0.0 -5.08239990574e-17 -1.73333696049e-33" xyz="8.71763536758e-24 1.61232339957e-23 1e-23"/>
+  </joint>
+  <joint name="hebi_x5_6Z_to_a_2040_01r_11Z" type="continuous">
+    <parent link="hebi_x5_6Z"/>
+    <child link="a_2040_01r_11Z"/>
+    <axis xyz="-2.77554010017e-17 -1.73472348e-16 1.0"/>
+    <origin rpy="0.0 3.34767643574e-17 7.733222874e-33" xyz="-5.55318730444e-17 -2.96636102637e-18 0.03"/>
+  </joint>
+  <joint name="a_2040_01r_11Z_to_hebi_x5_2Z" type="fixed">
+    <parent link="a_2040_01r_11Z"/>
+    <child link="hebi_x5_2Z"/>
+    <origin rpy="1.57079632679 3.08148791102e-33 -5.08239990574e-17" xyz="4.80186749853e-17 -0.0375 0.055"/>
+  </joint>
+  <transmission name="tran_a_2040_01r_11Z_to_hebi_x5_2Z">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="a_2040_01r_11Z_to_hebi_x5_2Z">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_a_2040_01r_11Z_to_hebi_x5_2Z">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <joint name="hebi_x5_2Z_to_a_2038_02_4Z" type="continuous">
+    <parent link="hebi_x5_2Z"/>
+    <child link="a_2038_02_4Z"/>
+    <axis xyz="-2.77554010017e-17 -1.66533454e-16 1.0"/>
+    <origin rpy="0.0 -2.77555756e-17 0.0" xyz="-5.35847694878e-17 2.34257058104e-17 0.03"/>
+  </joint>
+  <joint name="a_2038_02_4Z_to_tubepar_3Z" type="fixed">
+    <parent link="a_2038_02_4Z"/>
+    <child link="tubepar_3Z"/>
+    <origin rpy="1.57079632679 -1.57079632679 0.0" xyz="0.0135 -9.540978845e-20 0.02"/>
+  </joint>
+  <joint name="tubepar_3Z_to_a_2039_02_10Z" type="fixed">
+    <parent link="tubepar_3Z"/>
+    <child link="a_2039_02_10Z"/>
+    <origin rpy="1.57079632679 2.50240867501e-14 -1.57079632679" xyz="4.84783703319e-18 -0.3 5.20417041e-18"/>
+  </joint>
+  <joint name="a_2039_02_10Z_to_hebi_x5_5Z" type="fixed">-->
+    <parent link="a_2039_02_10Z"/>
+    <child link="hebi_x5_5Z"/>
+    <origin rpy="1.22464679915e-16 1.04083409e-17 2.50240867501e-14" xyz="0.014 3.34058705353e-16 0.02"/>
+  </joint>
+  <joint name="hebi_x5_5Z_to_a_2038_02_1Z" type="continuous">
+    <parent link="hebi_x5_5Z"/>
+    <child link="a_2038_02_1Z"/>
+    <axis xyz="-8.89879155574e-17 -1.5959456e-16 1.0"/>
+    <origin rpy="0.0 -2.77555756e-17 -3.08148791102e-33" xyz="-5.95130563275e-17 -4.7878368e-18 0.03"/>
+  </joint>
+  <transmission name="tran_hebi_x5_5Z_to_a_2038_02_1Z">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="hebi_x5_5Z_to_a_2038_02_1Z">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_hebi_x5_5Z_to_a_2038_02_1Z">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <joint name="a_2038_02_1Z_to_tubepar_8Z" type="fixed">
+    <parent link="a_2038_02_1Z"/>
+    <child link="tubepar_8Z"/>
+    <origin rpy="1.57079632679 -1.57079632679 0.0" xyz="0.0135 5.1174342845e-19 0.02"/>
+  </joint>
+  <joint name="tubepar_8Z_to_a_2039_02_7Z" type="fixed">
+    <parent link="tubepar_8Z"/>-->
+    <child link="a_2039_02_7Z"/>
+    <origin rpy="1.57079632679 2.50240867501e-14 -1.57079632679" xyz="-2.94658008559e-18 -0.3 9.0066843052e-18"/>
+  </joint>
+
+  <link name="world"/>
+  <link name="a_2038_02_1Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="5.68434188608e-17 9.86076128129e-34 3.48065554802e-33"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/a_2038_02_1z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="5.68434188608e-17 9.86076128129e-34 3.48065554802e-33"/>
+      <geometry>-->
+        <mesh filename="package://hebi_3dof_arm_description/meshes/a_2038_02_1z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0176052907699 9.86076128129e-34 0.0142788404199"/>
+      <mass value="0.059108249978877175"/>
+      <inertia ixx="2.3632587043e-05" ixy="0.0" ixz="-3.93131579939e-06" iyy="2.03298829586e-05" iyz="0.0" izz="2.72912531732e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2038_02_1Z">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <link name="a_2038_02_4Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="5.68994337913e-17 -9.87047832275e-34 -4.47113330557e-33"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/a_2038_02_4z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="5.68994337913e-17 -9.87047832275e-34 -4.47113330557e-33"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/a_2038_02_4z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0176052907699 -9.87047832275e-34 0.0142788404199"/>
+      <mass value="0.059108249978877175"/>
+      <inertia ixx="2.3632587043e-05" ixy="0.0" ixz="-3.93131579939e-06" iyy="2.03298829586e-05" iyz="0.0" izz="2.72912531732e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2038_02_4Z">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <link name="a_2039_02_7Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.014 3.47783837497e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/a_2039_02_7z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.014 3.47783837497e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/a_2039_02_7z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00256411047128 3.47783837497e-16 0.00833404763152"/>
+      <mass value="0.08075605008850124"/>
+      <inertia ixx="3.54766366127e-05" ixy="0.0" ixz="-8.29679742245e-06" iyy="3.7139980371e-05" iyz="0.0" izz="5.23238184568e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2039_02_7Z">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <link name="a_2039_02_10Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.014 3.48269560069e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/a_2039_02_10z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.014 3.48269560069e-16 0.02"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/a_2039_02_10z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00256411047128 3.48269560069e-16 0.00833404763152"/>
+      <mass value="0.08075605008850124"/>
+      <inertia ixx="3.54766366127e-05" ixy="0.0" ixz="-8.29679742245e-06" iyy="3.7139980371e-05" iyz="0.0" izz="5.23238184568e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2039_02_10Z">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <link name="a_2040_01r_11Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.00144337567 -0.0366111248 -0.0110127649"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/a_2040_01r_11z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.00144337567 -0.0366111248 -0.0110127649"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/a_2040_01r_11z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00491688893766 -0.0251584176519 0.0321388430548"/>
+      <mass value="0.20914931631287276"/>
+      <inertia ixx="0.000172164331359" ixy="6.97960030475e-06" ixz="1.86510590224e-06" iyy="0.000214507296155" iyz="3.45432088412e-05" izz="0.00012102414398"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2040_01r_11Z">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <link name="a_2043_01_9Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="1e-23 1e-23 1e-23"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/a_2043_01_9z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="1e-23 1e-23 1e-23"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/a_2043_01_9z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00139419949295 1e-23 -0.00293190489101"/>
+      <mass value="0.06272938391183215"/>
+      <inertia ixx="7.22571415296e-05" ixy="2.96268938113e-10" ixz="5.68510520871e-08" iyy="1.34631068457e-05" iyz="0.0" izz="8.48613385518e-05"/>
+    </inertial>
+  </link>
+  <gazebo reference="a_2043_01_9Z">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <link name="tubepar_8Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-2.94658008559e-18 -0.3 9.0066843052e-18"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/tubepar_8z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-2.94658008559e-18 -0.3 9.0066843052e-18"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/tubepar_8z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-2.94658008559e-18 -0.15 9.0066843052e-18"/>
+      <mass value="0.12133427279164029"/>
+      <inertia ixx="0.000923727684155" ixy="0.0" ixz="0.0" iyy="2.74413054377e-05" iyz="0.0" izz="0.000923727713157"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_8Z">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <link name="tubepar_3Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="4.84783703319e-18 -0.3 5.20417041e-18"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/tubepar_3z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="4.84783703319e-18 -0.3 5.20417041e-18"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/tubepar_3z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="4.84783703319e-18 -0.15 5.20417041e-18"/>
+      <mass value="0.12133427279164029"/>
+      <inertia ixx="0.000923727684155" ixy="0.0" ixz="0.0" iyy="2.74413054377e-05" iyz="0.0" izz="0.000923727713157"/>
+    </inertial>
+  </link>
+  <gazebo reference="tubepar_3Z">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <link name="hebi_x5_5Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-5.81782375942e-17 -2.3939184e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/hebi_x5_5z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-5.81782375942e-17 -2.3939184e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/hebi_x5_5z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.31314990731599424"/>
+      <inertia ixx="0.000130134484577" ixy="-1.76457619391e-05" ixz="1.18542673976e-08" iyy="0.00022573878578" iyz="1.19840924602e-07" izz="0.000308861203858"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_5Z">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <link name="hebi_x5_6Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-5.55318730444e-17 -2.49799181e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/hebi_x5_6z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-5.55318730444e-17 -2.49799181e-18 0.015"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/hebi_x5_6z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.31314990731599424"/>
+      <inertia ixx="0.000130134484577" ixy="-1.76457619391e-05" ixz="1.18542673976e-08" iyy="0.00022573878578" iyz="1.19840924602e-07" izz="0.000308861203858"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_6Z">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <link name="hebi_x5_2Z">
+    <visual>
+      <origin rpy="0 0 0" xyz="-5.35847694878e-17 2.59237076204e-17 0.015"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/hebi_x5_2z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-5.35847694878e-17 2.59237076204e-17 0.015"/>
+      <geometry>
+        <mesh filename="package://hebi_3dof_arm_description/meshes/hebi_x5_2z_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0142019322139 -0.00151173442654 0.0150064707722"/>
+      <mass value="0.31314990731599424"/>
+      <inertia ixx="0.000130134484577" ixy="-1.76457619391e-05" ixz="1.18542673976e-08" iyy="0.00022573878578" iyz="1.19840924602e-07" izz="0.000308861203858"/>
+    </inertial>
+  </link>
+  <gazebo reference="hebi_x5_2Z">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+</robot>

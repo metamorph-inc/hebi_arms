@@ -1,0 +1,25 @@
+<launch>
+
+  <!-- Load the URDF model only the parameter server -->
+  <param name="robot_description" textfile="$(find hebi_3dof_arm_description)/urdf/hebi_3dof_arm_v2_jt_limits.urdf"/>
+
+  <!-- Start hebiros node -->
+  <node name="hebiros_node" pkg="hebiros" type="hebiros_node" output="screen" launch-prefix="xterm -e" />
+
+  <!-- Start main node -->
+  <node name="ctrl_end_eff_pos_class_3dof_test" pkg="hebi_generic_arms_description" type="hebi_3dof_arm_position_ctrl.py"
+        output="screen" launch-prefix="xterm -e" 
+        args="-hebi_group_name hebi_3dof_arm -hebi_base_family HEBI -hebi_base_name Base
+              -hebi_shoulder_family HEBI -hebi_shoulder_name Shoulder
+              -hebi_elbow_family HEBI -hebi_elbow_name Elbow
+              -from_master_topic master_to_arm -to_master_topic arm_to_master
+              -base_link a_2043_01_9Z -end_link a_2039_02_7Z
+              -ik_position_bounds 0.01,0.01,0.01" />
+
+  <!-- Start UI node -->
+  <node name="set_target_end_effector_pos" pkg="hebi_3dof_arm_description" type="set_target_end_effector_pos.py"
+        output="screen" launch-prefix="xterm -e"
+        args="-to_arm_topic master_to_arm -from_arm_topic arm_to_master" />
+
+  <!--  launch-prefix="xterm -e" -->
+</launch>

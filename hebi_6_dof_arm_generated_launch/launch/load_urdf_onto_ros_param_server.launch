@@ -1,0 +1,6 @@
+<launch>
+  <arg name="urdf_path" default="$(find hebi_6_dof_arm_generated_urdf)/urdf/hebi_6_dof_arm.urdf"/>
+
+  <!-- Load the URDF model only the parameter server -->
+  <param name="robot_description" textfile="$(arg urdf_path)"/>
+</launch>

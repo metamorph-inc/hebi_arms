@@ -1,0 +1,36 @@
+<launch>
+
+  <!-- Load URDF onto Parameter server, start Gazebo, spawn URDF in Gazebo -->
+  <include file="$(find hebi_6_dof_arm_generated_launch)/launch/spawn_urdf_in_gazebo.launch">
+    <arg name="spawn_z" value="0.4"/>
+  </include>
+
+  <!-- Start hebiros_node -->
+  <include file="$(find hebiros)/launch/hebiros_gazebo.launch" />
+
+  <node name="arm_rviz_controller" pkg="hebi_6_dof_arm_behavior" type="arm_rviz_ctrl.py"
+        output="screen" launch-prefix="xterm -e"
+        args="-hebi_group hebi_6d_arm -modules ARM/Base ARM/Shoulder ARM/Elbow ARM/Wrist_1 ARM/Wrist_2 ARM/Wrist_3
+             -base_link_name a_2043_01_13Z -end_link_name gripper_base"
+  />
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen" launch-prefix="xterm -e" />
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find hebi_6_dof_arm_behavior)/rviz/int_marker_demo.rviz" output="screen" launch-prefix="xterm -e"/>
+
+  <node name="gripper_effort_controller" pkg="hebi_6_dof_arm_behavior" type="gripper_effort_ctrl.py"
+        output="screen" launch-prefix="xterm -e"
+        args="-hebi_group hebi_gripper -module GRIPPER/Spool"
+  />
+
+  <!-- Spawn gazebo_transport_to_ros_topic nodes -->
+  <node name="gazebo_transport_to_ros_topic" pkg="hebihexapod_gazebo" type="gazebo_transport_to_ros_topic"
+        output="screen" launch-prefix="xterm -e" >
+    <param name="gazebo_transport_topic_to_sub" type="str" value="/gazebo/default/robot/GRIPPER/Spool/X5_9/gripper_force_torque/wrench" />
+    <param name="ros_topic_to_pub" type="str" value="gripper_force_torque" />
+    <param name="ros_rate" type="double" value="100.0" />
+  </node>
+
+  <!-- launch-prefix="xterm -e" -->
+
+</launch>

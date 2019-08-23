@@ -1,0 +1,4 @@
+<launch>
+  <!-- Load the URDF model only the parameter server -->
+  <param name="robot_description" textfile="$(find hebi_3dof_arm_description)/urdf/hebi_3dof_arm_v2_jt_limits.urdf"/>
+</launch>
