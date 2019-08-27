@@ -1,0 +1,13 @@
+<launch>
+
+  <include file="$(find openmeta_generated_urdf_package)/launch/load_urdf_onto_ros_param_server.launch" />  
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen" launch-prefix="xterm -e" />
+
+  <include file="$(find hebiros)/launch/hebiros.launch" />
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find openmeta_generated_urdf_package)/rviz/int_marker_demo.rviz" output="screen" launch-prefix="xterm -e"/>
+
+  <node name="trajectory_recording_tool" pkg="trajectory_recording_tool" type="record.py" args="-hebi_group 3DOFARM -modules HEBI/Base HEBI/Shoulder HEBI/Elbow" output="screen" launch-prefix="xterm -e" />
+
+</launch>
