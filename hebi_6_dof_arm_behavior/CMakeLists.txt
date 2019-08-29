@@ -8,14 +8,6 @@ project(hebi_6_dof_arm_behavior)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  robot_state_publisher
-  rospy
-  rviz
-  geometry_msgs
-  sensor_msgs
-  hebi_generic_arm_controllers
-  hebiros
-  hebiros_utils
 )
 
 ## System dependencies are found with CMake's conventions

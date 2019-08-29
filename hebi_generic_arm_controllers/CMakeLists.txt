@@ -8,19 +8,6 @@ project(hebi_generic_arm_controllers)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  rospy
-  rviz
-  std_msgs
-  sensor_msgs
-  geometry_msgs
-  trajectory_msgs
-  actionlib
-  interactive_markers
-  visualization_msgs
-  hebiros
-  urdf_parser_py
-  pykdl_utils
-  trac_ik_python
 )
 
 ## System dependencies are found with CMake's conventions

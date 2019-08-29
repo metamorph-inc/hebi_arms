@@ -14,8 +14,6 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   trajectory_msgs
   gazebo_ros
-  hebiros
-  hebiros_gazebo_plugin
   trac_ik_lib
   trac_ik_python
   trac_ik_kinematics_plugin
